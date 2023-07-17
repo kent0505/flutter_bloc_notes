@@ -60,8 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                     usernameField(loginCon),
                     passwordField(passwordCon),
                     loginButton(() {
-                      context.read<LoginBloc>().add(
-                          LoginButtonEvent(loginCon.text, passwordCon.text));
+                      context.read<LoginBloc>().add(LoginButtonEvent(loginCon.text, passwordCon.text));
                       loginCon.clear();
                       passwordCon.clear();
                     }),
