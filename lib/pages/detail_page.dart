@@ -64,9 +64,7 @@ class _DetailPageState extends State<DetailPage> {
                       icon: const Icon(Icons.delete),
                       onPressed: () {
                         alert.showAlertDialog(context, 'Delete', () {
-                          context.read<DetailBloc>().add(
-                                DeleteButtonEvent(widget.id),
-                              );
+                          context.read<DetailBloc>().add(DeleteButtonEvent(widget.id));
                         });
                       },
                     );
@@ -81,11 +79,7 @@ class _DetailPageState extends State<DetailPage> {
               if (state is EditPageState) {
                 return FloatingActionButton.extended(
                   onPressed: () {
-                    context.read<DetailBloc>().add(EditButtonEvent(
-                          widget.id,
-                          titleCon.text,
-                          descCon.text,
-                        ));
+                    context.read<DetailBloc>().add(EditButtonEvent(widget.id, titleCon.text, descCon.text));
                   },
                   label: const Text('Edit'),
                   icon: const Icon(Icons.save),
@@ -95,10 +89,7 @@ class _DetailPageState extends State<DetailPage> {
               if (state is AddPageState) {
                 return FloatingActionButton.extended(
                   onPressed: () {
-                    context.read<DetailBloc>().add(SaveButtonEvent(
-                          titleCon.text,
-                          descCon.text,
-                        ));
+                    context.read<DetailBloc>().add(SaveButtonEvent(titleCon.text, descCon.text));
                   },
                   label: const Text('Save'),
                   icon: const Icon(Icons.save),
