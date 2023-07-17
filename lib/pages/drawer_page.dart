@@ -48,9 +48,7 @@ class DrawerPage extends StatelessWidget {
                               IconButton(
                                 onPressed: () {
                                   alert.showAlertDialog(context, 'Logout', () {
-                                    context
-                                        .read<LoginBloc>()
-                                        .add(LogoutButtonEvent());
+                                    context.read<LoginBloc>().add(LogoutButtonEvent());
                                     navigator.navigate(context, '/login');
                                   });
                                 },
